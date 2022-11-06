@@ -88,12 +88,12 @@ public class JetsApplication {
 		System.out.println("  ,,,,,,,,,,,,,,,,");
 		System.out.println("> |BASIC TRAINING|: ");
 		System.out.println("  ''''''''''''''''");
-		System.out.println("   ___________________________________________________________________________________________");
+		System.out.println("   ____________________________________________________________________________________________");
 		System.out.println("   |               |                 |                       |                                |");
 		System.out.println("   | 1) List Fleet | 2) Fly All Jets | 3) View Fastest Jet   | 4) View Jet With Longest Range |");
 		System.out.println("   |---------------|-----------------|-----------------------|--------------------------------|");
 		System.out.println("   |               |                 |                       |                                |");
-		System.out.println("   | 5) Bomb       | 6) Attack       | 7) Add a Jet to Fleet | 8) Remove a Jet From Fleet     |");
+		System.out.println("   | 5) Bomb       | 6) Missiles     | 7) Add a Jet to Fleet | 8) Remove a Jet From Fleet     |");
 		System.out.println("   |---------------'-----------------|-----------------------'--------------------------------|");
 		System.out.println("   |                                 |                                                        |");
 		System.out.println("   | 9) Quit                         | 0) Menu                                                |");
@@ -108,7 +108,6 @@ public class JetsApplication {
 			if (userInput == 1) {
 				airfield.allJetsTogether();
 				System.out.println();
-//				System.out.println(airfield.getFleet());
 				airfield.listFleet();
 				System.out.println();
 				banter();
@@ -213,7 +212,7 @@ public class JetsApplication {
 
 		String[] farewell = { "> Cya next time, Maverick.", "> Until next time, Ace.",
 				"> Come back when you've got some sorties under your belt.", "> Stay sharp, Cadet.",
-				"> Smell ya later, Rookie.", "> You can be my wingman anytime." };
+				"> Smell ya later, Rookie.", "> You can be my wingman anytime.", "> BRAVO YANKEE ECHO" };
 
 		Random rand = new Random();
 		String bye = farewell[rand.nextInt(farewell.length)];

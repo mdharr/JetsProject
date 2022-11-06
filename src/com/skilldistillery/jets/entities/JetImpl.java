@@ -8,7 +8,7 @@ public class JetImpl extends Jet {
 
 	@Override
 	public void fly() {
-		System.out.println("> " + getModel() + " has spread its wings and taken flight.");
+		System.out.println("> " + getModel() + " has left the nest.");
 		
 	}
 	
