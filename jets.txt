@@ -1,2 +1,5 @@
-DCV,USS Enterprise,100000,10000,1000000
-Fighter,Bad Jet,100000,10000,100000
+Fighter,General Dynamics F-16 Fighting Falcon,1560,2400,14600000
+Cargo,Lockheed C-130 Hercules,336,2361,30100000
+Fighter,Lockheed Martin F-22 Raptor,1500,1864,165000000
+Bomber,Northrop B-2 Spirit,628,6897,737000000
+Surveillance,Boeing P-8A Poseidon,564,1381,275000000
