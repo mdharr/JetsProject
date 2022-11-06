@@ -1,8 +1,6 @@
 package com.skilldistillery.jets.entities;
 
 public class Fighter extends Jet {
-// example
-	// must have a total of 5 airplanes
 	
 	public Fighter(String role, String model, double speed, int range, long price) {
 		super(role, model, speed, range, price);

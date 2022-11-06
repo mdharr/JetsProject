@@ -10,7 +10,6 @@ public class Bomber extends Jet {
 		System.out.println("> " + getModel() + " dropping the package.");
 	}
 
-
 	@Override
 	public void fly() {
 		System.out.println("> " + getModel() + " soaring undetected. ");

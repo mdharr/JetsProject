@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class AirField {
-	// will read from file into this class
+	
 	private ArrayList<Jet> fleet = new ArrayList<Jet>();
 	private String role;
 	private String model;
@@ -55,6 +56,13 @@ public class AirField {
 		return fleet;
 
 	}
+	
+	public void listFleet() {
+		int i = 0;
+		for(i = 0; i < fleet.size(); i++) {
+			System.out.println(i + ": " + fleet.get(i));
+		}	
+	}
 
 	public void flyAllJets() {
 	System.out.println();
@@ -76,6 +84,27 @@ public class AirField {
 		}
 		System.out.println("> The fastest jet is " + fastestJet);
 		System.out.println();
+
+	}
+	
+	public void removeJet(Scanner scanner) {
+		while(true) {
+			System.out.println();
+			int i = 0;
+			for(i = 0; i < fleet.size(); i++) {
+				System.out.println(i + ": " + fleet.get(i));
+			}	
+			System.out.println("Let's retire an aircraft unit from the fleet. Which'll it be?");
+			int userNum = scanner.nextInt();
+			if(userNum >= 0 && userNum <= fleet.size()) {
+				fleet.remove(userNum);
+				break;
+			} else {
+				System.out.println("That's not a valid input. Try again.");
+				continue;
+			}
+			
+		}
 
 	}
 
@@ -125,10 +154,6 @@ public class AirField {
 		
 		fleet.add(jet);
 		System.out.println();
-
-	}
-
-	public void removeJet() {
 
 	}
 
@@ -281,4 +306,31 @@ public class AirField {
         System.out.println("|                                        |");
         System.out.println("------------------------------------------");
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(fleet, model, price, range, role, speed);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AirField other = (AirField) obj;
+		return Objects.equals(fleet, other.fleet) && Objects.equals(model, other.model) && price == other.price
+				&& range == other.range && Objects.equals(role, other.role)
+				&& Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
+	}
+
+	@Override
+	public String toString() {
+		return "AirField [fleet=" + fleet + ", role=" + role + ", model=" + model + ", speed=" + speed + ", range="
+				+ range + ", price=" + price + "]";
+	}
+	
+	
 }

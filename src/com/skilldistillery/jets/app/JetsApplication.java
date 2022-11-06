@@ -29,7 +29,9 @@ public class JetsApplication {
 	}
 
 	public void launch() {
-						
+		
+		airfield.readAirField("jets.txt");
+								
 		airfield.titleScreen();
 
 		start();
@@ -103,7 +105,7 @@ public class JetsApplication {
 			int userInput = Integer.parseInt(scanner.next());
 			if (userInput == 1) {
 				airfield.allJetsTogether();
-				airfield.readAirField("jets.txt");
+				System.out.println();
 				System.out.println(airfield.getFleet());
 				System.out.println();
 				banter();
@@ -155,7 +157,8 @@ public class JetsApplication {
 				System.out.println();
 
 			} else if (userInput == 8) {
-				
+				airfield.removeJet(scanner);
+
 				banter();
 				System.out.println();
 			} else if (userInput == 9) {

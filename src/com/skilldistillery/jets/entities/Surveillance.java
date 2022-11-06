@@ -8,7 +8,6 @@ public class Surveillance extends Jet {
 	
 	public void surveil() {
 		System.out.println("> " + getModel() + "surveillance commencing");
-
 	}
 
 	@Override
