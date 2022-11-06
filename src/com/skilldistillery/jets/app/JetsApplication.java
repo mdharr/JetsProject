@@ -67,9 +67,9 @@ public class JetsApplication {
 		}
 
 		while (true) {
-			System.out.println("                       ,,,,,,,,,,,,,,,,");
-			System.out.print("> Press Enter to begin |BASIC TRAINING|: \n");
-			System.out.println("                       ''''''''''''''''");
+			System.out.println("                                 ,,,,,,,,,,,,,,,,");
+			System.out.print("> Press the 'Enter' key to begin |BASIC TRAINING|: \n");
+			System.out.println("                                 ''''''''''''''''");
 			String userInput = scanner.nextLine();
 
 			if (userInput.equals("")) {
@@ -94,19 +94,22 @@ public class JetsApplication {
 		System.out.println("   |---------------|-----------------|-----------------------|--------------------------------|");
 		System.out.println("   |               |                 |                       |                                |");
 		System.out.println("   | 5) Bomb       | 6) Attack       | 7) Add a Jet to Fleet | 8) Remove a Jet From Fleet     |");
-		System.out.println("   |---------------'-----------------'-----------------------'--------------------------------|");
-		System.out.println("   |                                                                                          |");
-		System.out.println("   |                                         9) Quit                                          |");
-		System.out.println("   |__________________________________________________________________________________________|");
+		System.out.println("   |---------------'-----------------|-----------------------'--------------------------------|");
+		System.out.println("   |                                 |                                                        |");
+		System.out.println("   | 9) Quit                         | 0) Menu                                                |");
+		System.out.println("   |_________________________________|________________________________________________________|");
 		System.out.println();
 
 		while (true) {
-			System.out.println("> Select a field below to get familiar with our aircraft's capabilities: ");
+			System.out.println("> Input the corresponding number to get familiar with our aircraft's capabilities: ");
+			System.out.println();
+			System.out.println("> Enter '0' to see the Menu.");
 			int userInput = Integer.parseInt(scanner.next());
 			if (userInput == 1) {
 				airfield.allJetsTogether();
 				System.out.println();
-				System.out.println(airfield.getFleet());
+//				System.out.println(airfield.getFleet());
+				airfield.listFleet();
 				System.out.println();
 				banter();
 				System.out.println();
@@ -119,18 +122,22 @@ public class JetsApplication {
 
 			} else if (userInput == 3) {
 				airfield.superFastJet();
+				System.out.println();
 				airfield.displayFastestJet();
+				System.out.println();
 				banter();
 				System.out.println();
 
 			} else if (userInput == 4) {
 				airfield.longRangeJet();
+				System.out.println();
 				airfield.displayLongestRangeJet();
 				banter();
 				System.out.println();
 
 			} else if (userInput == 5) {
 				airfield.bombsAway();
+				System.out.println();
 				for (Jet jet : fleet) {
 					if (jet instanceof Bomber) {
 						((Bomber) jet).bomb();
@@ -142,6 +149,7 @@ public class JetsApplication {
 
 			} else if (userInput == 6) {
 				airfield.missilesAway();
+				System.out.println();
 				for (Jet jet : fleet) {
 					if (jet instanceof Fighter) {
 						((Fighter) jet).missiles();
@@ -164,16 +172,24 @@ public class JetsApplication {
 			} else if (userInput == 9) {
 				System.out.println("> Are you sure you want to quit? (y/n) ");
 				char userConfirm = scanner.next().charAt(0);
-				if (userConfirm == 'n') {
+				if (userConfirm == 'y') {
+					System.out.println();
+					airfield.allJetsFlying();
+					System.out.println();
+					farewell();
+					System.out.println("  ,,,,,,,,,,,,,,,,,,,,");
+					System.out.println("> |Application Closed|");
+					System.out.println("  ''''''''''''''''''''");
+					System.exit(8);
+					break;
 				}
-				farewell();
-				System.out.println("  ,,,,,,,,,,,,,,,,,,,,");
-				System.out.println("> |Application Closed|");
-				System.out.println("  ''''''''''''''''''''");
-				System.exit(8);
-				break;
+				continue;
+			} else if (userInput == 0) {
+				menu();
+				
 			} else {
 				System.out.println("> Incorrect input, try again.");
+				System.out.println();
 //				continue;
 			}
 		}

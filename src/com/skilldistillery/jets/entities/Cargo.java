@@ -13,6 +13,7 @@ public class Cargo extends Jet {
 	@Override
 	public void fly() {
 		System.out.println("> " + getModel() + " up and away.");	
+		
 	}
 
 }

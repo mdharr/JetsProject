@@ -60,7 +60,8 @@ public class AirField {
 	public void listFleet() {
 		int i = 0;
 		for(i = 0; i < fleet.size(); i++) {
-			System.out.println(i + ": " + fleet.get(i));
+			System.out.println("> " + fleet.get(i));
+			System.out.println();
 		}	
 	}
 
@@ -68,6 +69,7 @@ public class AirField {
 	System.out.println();
 		for (Jet jet : fleet) {
 			jet.fly();
+			System.out.println();
 		}
 		System.out.println();
 
@@ -292,7 +294,7 @@ public class AirField {
   System.out.println("|     |__|||  |     |---|---|||___|   |___-----|||||             |");
   System.out.println("| |  ||.  |   |       |     |||                |||||             |");
   System.out.println("|                                                                |");
-	System.out.println("-------------------------------------------------------------------");
+	System.out.println("------------------------------------------------------------------");
 	}
 	
 	public void missilesAway() {

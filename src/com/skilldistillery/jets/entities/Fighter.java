@@ -12,6 +12,8 @@ public class Fighter extends Jet {
 
 	@Override
 	public void fly() {
-		System.out.println("> " + getModel() + " in the sky.");
+		System.out.println("> " + getModel() + " lurking above.");
+		
 	}
+	
 }

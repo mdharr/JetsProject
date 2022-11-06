@@ -13,6 +13,7 @@ public class Surveillance extends Jet {
 	@Override
 	public void fly() {
 		System.out.println("> " + getModel()+ " flying high.");
+		
 	}
 
 }
